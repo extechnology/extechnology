@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative z-1 flex items-center  justify-center h-[150%] min-h-[300px]    bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]  overflow-hidden"
+        className="relative z-1 flex items-center  justify-center h-[150%] md:min-h-[300px] min-h-[150px]   bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]  overflow-hidden"
       >
         <div
           className="absolute inset-0 z-0 border border-sky-500"
@@ -73,15 +73,15 @@ const WhyChooseUs = () => {
 
         {/* Foreground Content */}
         <div className="relative z-20 text-center  ">
-          <h1 className="text-4xl md:text-7xl font-bold leading-snug tracking-wider m-0">
+          <h1 className="text-3xl md:text-7xl font-bold leading-snug tracking-wider m-0">
             Why Choose Us
           </h1>
         </div>
       </section>
 
-      <div className=" bg-[var(--bg-color)] text-[var(--text-color)]  grid grid-cols-1 md:grid-cols-2 items-center max-w-7xl mx-auto h-screen px-6">
+      <div className=" bg-[var(--bg-color)] text-[var(--text-color)]  grid grid-cols-1 md:grid-cols-2 items-center max-w-7xl mx-auto h-screen md:px-6">
         {/* Text Section */}
-        <div className="relative border h-full flex items-center justify-center">
+        <div className="relative border h-full py-8 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Image Section */}
-        <div className="relative border h-full flex items-center justify-center">
+        <div className="relative border h-full pb-7 flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.img
               key={current}

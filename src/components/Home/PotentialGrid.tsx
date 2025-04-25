@@ -45,7 +45,7 @@ const PotentialGrid = () => {
         )}
 
         {/* Foreground Content */}
-        <div className="relative z-20 text-center">
+        <div className="relative z-20 py-10 text-center">
           <div>
             <h1 className="text-xl md:text-7xl font-bold leading-snug m-0">
               Unlock The Full Potential of
@@ -54,7 +54,7 @@ const PotentialGrid = () => {
               Your Project With Our <br /> Company
             </h1>
           </div>
-          <div className="absolute right-0 -bottom-90 overflow-visible ">
+          <div className="absolute hidden md:flex right-0 -bottom-90 overflow-visible ">
             <img
               src="2.svg"
               alt=""

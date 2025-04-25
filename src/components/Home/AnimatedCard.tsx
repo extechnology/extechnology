@@ -35,13 +35,13 @@ const AnimatedCard = () => {
   };
 
   return (
-    <div className=" bg-[var(--bg-color)] text-[var(--text-color)] pt-40 pb-20">
+    <div className=" bg-[var(--bg-color)] text-[var(--text-color)] md:pt-40 pt-12 pb-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className=" justify-between items-center">
-          <h1 className=" text-4xl md:text-5xl font-semibold">
+          <h1 className=" text-4xl md:text-5xl text-center md:text-start font-semibold">
             We Provide
           </h1>
-          <div className="flex justify-end gap-4">
+          <div className="hidden md:flex justify-end gap-4">
             <button
               onClick={handlePrev}
               title="Previous"

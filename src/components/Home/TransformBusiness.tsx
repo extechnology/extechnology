@@ -14,7 +14,7 @@ const TransformBusiness = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative content-center items-center border border-sky-600   min-h-screen px-4  bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]"
+        className="relative content-center items-center border border-sky-600  md:min-h-screen px-4  bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]"
       >
         {/* Base background at 30% opacity */}
         <div
@@ -45,16 +45,16 @@ const TransformBusiness = () => {
         )}
 
         {/* Foreground Content */}
-        <div className="relative z-20 text-center">
+        <div className="relative z-20 text-center py-5">
           <div>
-            <h1 className="text-4xl md:text-7xl font-bold leading-snug tracking-wider m-0">
+            <h1 className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0">
               Transform Your Business
             </h1>
-            <h1 className="text-4xl md:text-7xl font-bold leading-snug tracking-wider m-0">
+            <h1 className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0">
               With Our Services
             </h1>
           </div>
-          <div className="absolute flex z-21 left-0 top-35">
+          <div className="absolute hidden md:flex z-21 left-0 top-35">
             <img
               src="/1 (2).svg"
               alt=""

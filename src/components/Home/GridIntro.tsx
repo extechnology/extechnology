@@ -46,7 +46,7 @@ export default function GridIntro() {
 
         {/* Animated Text Section */}
         <div
-          className="relative z-10  text-white  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5"
+          className="relative z-10  text-white py-10  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5"
         >
           {lines.map((line, idx) => (
             <p key={idx} >
