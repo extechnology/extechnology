@@ -14,7 +14,7 @@ const TransformBusiness = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative content-center items-center border border-sky-600   min-h-screen px-4  bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]  overflow-hidden"
+        className="relative content-center items-center border border-sky-600   min-h-screen px-4  bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]"
       >
         {/* Base background at 30% opacity */}
         <div

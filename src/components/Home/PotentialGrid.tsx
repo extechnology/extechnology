@@ -14,7 +14,7 @@ const PotentialGrid = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative z-10 content-center items-center border border-sky-600 md:h-[90vh] px-4 bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)] overflow-hidden"
+        className="relative z-10 content-center items-center border border-sky-600 md:h-[90vh] px-4 bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]"
       >
         {/* Base background at 30% opacity */}
         <div
@@ -54,7 +54,7 @@ const PotentialGrid = () => {
               Your Project With Our <br /> Company
             </h1>
           </div>
-          <div className="absolute right-0 -bottom-90 ">
+          <div className="absolute right-0 -bottom-90 overflow-visible ">
             <img
               src="2.svg"
               alt=""

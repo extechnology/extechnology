@@ -1,22 +1,7 @@
 @import "tailwindcss";
 
 /* index.css */
-:root {
-  --bg-color: white;
-  --text-color: black;
-  --secondary-bg-color: #121B36; /* Default for certain components */
-  --secondary-text-color: white; /* Default for certain components */
-  --tertiary-bg-color: #9F36F8; /* Default for certain components */
-}
 
-.dark {
-  --bg-color: black;
-  --text-color: white;
-  --secondary-bg-color: black; /* Adjust for dark mode */
-  --secondary-text-color: white; /* Default for certain components */
-  --tertiary-text-color: white; /* Default for certain components */
-
-}
 
 @layer utilities {
   .animate-scroll-x {

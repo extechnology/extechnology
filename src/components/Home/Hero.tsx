@@ -15,15 +15,15 @@ const Hero = () => {
   const fastRange: [number, number] = [0, 0.5];
 
   // Text transformations
-  const textScale = useTransform(scrollYProgress, fastRange, [1, 1.6]);
+  const textScale = useTransform(scrollYProgress, fastRange, [1.1, 1.6]);
   const textRotate = useTransform(scrollYProgress, fastRange, [0, -15]);
 
   // Button horizontal movement
-  const leftBtnX = useTransform(scrollYProgress, fastRange, [0, -280]);
-  const rightBtnX = useTransform(scrollYProgress, fastRange, [0, 250]);
+  const leftBtnX = useTransform(scrollYProgress, fastRange, [0, -300]);
+  const rightBtnX = useTransform(scrollYProgress, fastRange, [0, 290]);
 
   // Globe movement and opacity
-  const globeY = useTransform(scrollYProgress, fastRange, [100, -150]);
+  const globeY = useTransform(scrollYProgress, fastRange, [100, -380]);
   const globeOpacity = useTransform(scrollYProgress, fastRange, [1, 1.5]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {

@@ -31,7 +31,7 @@ const ScrollCarousel = () => {
     const totalSlides = sections.length;
 
     gsap.set(sections, { xPercent: 100, opacity: 0 });
-    gsap.set(sections[0], { xPercent: 0, opacity: 1 });
+    gsap.set(sections[0] as Element, { xPercent: 0, opacity: 1 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -48,11 +48,11 @@ const ScrollCarousel = () => {
     sections.forEach((section, i) => {
       if (i === 0) return;
       tl.to(
-        sections[i - 1],
+        sections[i - 1] as Element,
         { xPercent: -100, opacity: 0, duration: 1 },
         `+=0`
       ).fromTo(
-        section,
+        section as Element, 
         { xPercent: 100, opacity: 0 },
         { xPercent: 0, opacity: 1, duration: 1 },
         "<"

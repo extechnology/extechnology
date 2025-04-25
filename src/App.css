@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --secondary-bg-color: #121B36; 
+  --secondary-text-color: white; 
+  --tertiary-bg-color: #9F36F8; 
+  --tertiary-text-color: #9F36F8; 
+}
+
+.dark {
+  --bg-color: black;
+  --text-color: white;
+  --secondary-bg-color: black; 
+  --secondary-text-color: white; 
+  --tertiary-bg-color: white; 
+  --tertiary-text-color: white; 
+
+}
+
+
 body {
   font-family: "Geist Mono", monospace;
   font-optical-sizing: auto;
@@ -11,7 +32,6 @@ body {
   border-bottom-width: 2px;
   border-image: none;
   border-bottom: 4px dashed #9F37F8;
-  /* Optional: control dash length */
   border-bottom: 2px dashed;
   border-bottom-style: dashed;
 }

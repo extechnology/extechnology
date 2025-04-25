@@ -38,11 +38,11 @@ const UnlockPotential: React.FC = () => {
       <div className="relative">
         <PotentialGrid />
       </div>
-      <section className="relative z-5 flex items-center justify-center px-4 md:px-16 py-16 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden">
+      <section className="relative z-5 flex items-center justify-center px-4 md:px-16 pt-40 pb-20 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden">
         {/* Background Layer with Gradient */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute  inset-0 z-0 overflow-hidden">
           {/* Main gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-800 via-black to-black opacity-10" />
+          <div className="absolute  inset-0 bg-gradient-to-tr from-purple-800 via-black to-black opacity-10" />
 
           {/* Bottom left gradient blur accent */}
           {/* <div className="absolute bottom-12 left-12 w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full filter blur-3xl opacity-30" /> */}
@@ -52,9 +52,9 @@ const UnlockPotential: React.FC = () => {
         </div>
 
         {/* Grid container that matches text width */}
-        <div className="relative max-w-6xl w-full">
+        <div className="relative   max-w-6xl w-full">
           {/* ✅ Grid pattern - hidden on mobile */}
-          <div className="absolute inset-0 items-center justify-center hidden md:flex">
+          <div className="absolute  inset-0 items-center justify-center hidden md:flex">
             <div
               className="absolute w-[150%] max-w-[1500px] h-[80%] max-h-[1300px] mx-auto"
               style={{
@@ -73,7 +73,7 @@ const UnlockPotential: React.FC = () => {
           {/* ✅ Animated Text Section (always visible) */}
           <motion.div
             ref={ref}
-            className="relative z-10 font-bold text-md md:text-xl lg:text-2xl grid grid-cols-1 md:grid-cols-3 items-center space-y-18  content-center gap-10"
+            className="relative z-10 font-bold  text-md md:text-xl lg:text-2xl grid grid-cols-1 md:grid-cols-3 items-center space-y-18  content-center gap-10"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}

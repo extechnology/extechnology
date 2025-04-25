@@ -34,8 +34,8 @@ const Footer = () => {
               className="h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
             />
           ))}
+          {/* <div className="h-3 w-full relative  opacity-20 bg-gradient-to-t from-fuchsia-400 via-slate-700 to-black"></div> */}
         </div>
-        <div className="h-3 w-full absolute -bottom-68  opacity-20 bg-gradient-to-t from-fuchsia-400 via-slate-700 to-black"></div>
       </div>
       <footer className="bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)] px-6 md:px-20 pt-1 pb-10 relative z-10">
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10">
