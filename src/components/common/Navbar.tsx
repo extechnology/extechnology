@@ -2,17 +2,27 @@ import { useState, useEffect } from "react";
 import { User, LogIn, Tag, Home, Sun, Moon } from "lucide-react";
 import { useIsMobile } from "../../hooks/useMobile";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  interface ThemeContextValue {
+    darkMode: boolean;
+    toggleTheme: () => void;
+  }
   const [isScrolled, setIsScrolled] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-  const isMobile = useIsMobile();
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode, toggleTheme } = useContext<ThemeContextValue>(ThemeContext); 
+  const isMobile = useIsMobile(); // ✅ custom hook for responsiveness
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   const navItems = [
     {
@@ -100,7 +110,7 @@ const Navbar = () => {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full bg-white/10 text-white dark:bg-black/10 hover:bg-white/20 dark:hover:bg-black/20 transition-colors"
+                className="p-2 rounded-full  hover:bg-white/20 dark:hover:bg-black/20 transition-colors cursor-pointer"
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (

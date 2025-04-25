@@ -1,23 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 
-
-:root {
-  --bg-color: white;
-  --text-color: black;
-  --secondary-bg-color: #121B36; 
-  --secondary-text-color: white; 
-  --tertiary-bg-color: #9F36F8; 
-  --tertiary-text-color: #9F36F8; 
-}
-
-.dark {
-  --bg-color: black;
-  --text-color: white;
-  --secondary-bg-color: black; 
-  --secondary-text-color: white; 
-  --tertiary-bg-color: white; 
-  --tertiary-text-color: white; 
-
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -26,6 +10,32 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --secondary-bg-color: #121B36; 
+  --secondary-text-color: white; 
+  --tertiary-bg-color: rgba(220, 200, 255, 1) ;
+  --tertiary-text-color: black;
+  --quaternary-bg-color: rgba(220, 200, 255, 1);
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  --bg-color: black;
+  --text-color: white;
+  --secondary-bg-color: black; 
+  --secondary-text-color: white; 
+  --tertiary-bg-color: #0e0e0e; 
+  --tertiary-text-color: white; 
+  --quaternary-bg-color: #1c1c1c;
+  --border-color: #4B5563;
+
+}
+
+
+
 
 .custom-dashed {
   border-bottom-style: dashed;
