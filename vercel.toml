@@ -1,0 +1,5 @@
+[[redirects]]
+  source = "/:match*"
+  destination = "/"
+  status = 200
+  force = true
