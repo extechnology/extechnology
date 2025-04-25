@@ -1,0 +1,83 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const lines = [
+  "EXTECHNOLOGY IS A DYNAMIC TECHNOLOGY FIRM SPECIALIZING IN",
+  "THE CREATION OF STANDARD/ DYNAMIC WEBSITES, E-COMMERCE",
+  "PLATFORMS, CHATBOTS, AND MOBILE APPLICATIONS. WITH A",
+  "COMMITMENT TO INNOVATION AND EXCELLENCE.",
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const lineVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+export default function GridIntro() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <section className="relative md:min-h-screen flex items-center justify-center px-4 md:px-16 bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]  overflow-hidden">
+      {/* Background Layer with Gradient */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Main gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-purple-800 via-black to-black opacity-10" />
+
+        {/* Bottom left gradient blur accent */}
+        <div className="absolute bottom-12 left-12 w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full filter blur-3xl opacity-30" />
+
+        {/* Top right gradient blur accent */}
+        <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full filter blur-3xl opacity-30" />
+      </div>
+
+      {/* Grid container that matches text width */}
+      <div className="relative max-w-6xl w-full">
+        {/* Grid pattern - positioned behind text only */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            className="absolute  w-[150%] max-w-[1500px] h-[150%] max-h-[1500px]  mx-auto"
+            style={{
+              backgroundImage: `
+              linear-gradient(to right, rgba(99, 102, 241, 0.5) 1.5px, transparent 1.5px),
+              linear-gradient(to bottom, rgba(14, 165, 233, 0.5) 1.5px, transparent 1.5px)
+            `,
+              backgroundSize: "80px 80px",
+              backgroundPosition: "center center",
+              maskImage:
+                "linear-gradient(to right, transparent 10%, white 20%, white 80%, transparent 90%)",
+            }}
+          />
+        </div>
+
+        {/* Animated Text Section */}
+        <motion.div
+          ref={ref}
+          className="relative z-10  text-white  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {lines.map((line, idx) => (
+            <motion.p key={idx} variants={lineVariants}>
+              {line}
+            </motion.p>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
