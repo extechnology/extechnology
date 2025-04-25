@@ -1,20 +1,32 @@
 import { useState, useEffect } from "react";
-import { User, LogIn, Tag, Home, Sun, Moon } from "lucide-react";
-import { useIsMobile } from "../../hooks/useMobile";
+import { User, LogIn, Tag, Home, Sun, Moon, Menu, X } from "lucide-react";
+// import { useIsMobile } from "../../hooks/useMobile";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import { Button } from "@/ui/Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  // const isMobile = useIsMobile();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   interface ThemeContextValue {
     darkMode: boolean;
     toggleTheme: () => void;
   }
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const { darkMode, toggleTheme } = useContext<ThemeContextValue>(ThemeContext); 
-  const isMobile = useIsMobile(); // ✅ custom hook for responsiveness
+  const { darkMode, toggleTheme } = useContext<ThemeContextValue>(ThemeContext);
 
   useEffect(() => {
     if (darkMode) {
@@ -65,11 +77,11 @@ const Navbar = () => {
       <div
         className={`transition-all duration-500 ease-in-out  ${
           isScrolled
-            ? "w-[85%] rounded-full  text-[var(--text-color)] bg-[var(--bg-color)] backdrop-blur-lg border border-white/10 shadow-sm bg-opacity-80 shadow-[#9f36f8] transform-gpu"
+            ? "md:w-[85%] w-[94%] rounded-full  text-[var(--text-color)] bg-[var(--bg-color)] backdrop-blur-lg border border-white/10 shadow-sm bg-opacity-80 shadow-[#9f36f8] transform-gpu"
             : "w-full bg-transparent text-[var(--text-color)] transform-gpu"
         }`}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto md:px-4">
           <div className="flex items-center justify-between py-3">
             {/* Company Logo */}
             <div className="flex items-center justify-center">
@@ -78,14 +90,14 @@ const Navbar = () => {
                   src="/EX_TECHNOLOGY_LOGO-01.png"
                   alt="Exbot Logo"
                   loading="lazy"
-                  className="w-36 h-12  mb-1 object-contain transition-all duration-300 group-hover:scale-110 dark:hidden"
+                  className="md:w-36 pl-4 md:pl-0 h-12  md:mb-1 object-contain transition-all duration-300 group-hover:scale-110 "
                 />
-                <img
+                {/* <img
                   src="/EX_TECHNOLOGY_LOGO-01.png"
                   alt="Exbot Logo"
                   loading="lazy"
                   className="w-36 h-12 mb-1 object-contain transition-all duration-300 group-hover:scale-110 hidden dark:block"
-                />
+                /> */}
               </Link>
             </div>
 
@@ -129,19 +141,45 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Mobile Navigation Toggle */}
+            {/* Mobile Navigation Toggle Button */}
+            <div className="flex items-center md:hidden">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full  hover:bg-white/20 dark:hover:bg-black/20 transition-colors cursor-pointer"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? (
+                  <Sun className="w-5 h-5 text-primary" />
+                ) : (
+                  <Moon className="w-5 h-5 text-primary" />
+                )}
+              </button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(!isOpen)}
+                className="mr-3 text-[var(--text-color)]  relative z-50"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? (
+                  <X className="animate-fade-in" />
+                ) : (
+                  <Menu className="animate-fade-in" />
+                )}
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Navigation Menu */}
           {isMobile && (
             <div
-              className={`fixed inset-0 bg-black/90 backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-500 ease-in-out z-40 ${
+              className={`fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-500 ease-in-out z-40 ${
                 isOpen
                   ? "opacity-100 pointer-events-auto"
                   : "opacity-0 pointer-events-none"
               }`}
             >
-              <nav className="flex flex-col space-y-8 w-full max-w-xs">
+              <nav className="flex flex-col space-y-8 w-full px-4">
                 {navItems.map((item, index) => (
                   <a
                     key={item.label}

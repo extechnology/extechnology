@@ -15,7 +15,7 @@ const Footer = () => {
     <div>
       {/* Social bar */}
       <div className="w-full overflow-x-auto flex justify-center whitespace-nowrap border-t border-b border-[#4A1870] bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)] py-5 no-scrollbar">
-        <div className="inline-flex items-center gap-8">
+        <div className="inline-flex items-center px-5 md:px-0 gap-8">
           {[
             "google",
             "Facebook",

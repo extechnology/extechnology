@@ -92,7 +92,7 @@ const WhyChooseUs = () => {
               className="space-y-6 absolute"
             >
               <div className="w-[80%] mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold whitespace-pre-line">
+                <h1 className="text-4xl md:text-5xl pb-3 font-bold whitespace-pre-line">
                   {SlideData[current].title}
                 </h1>
                 <p className="text-xl md:text-2xl max-w-lg">
