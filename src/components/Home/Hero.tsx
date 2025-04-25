@@ -95,7 +95,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.div style={{ x: rightBtnX }}>
-            <button className="px-6 py-3 border   rounded-md hover:bg-white hover:text-black transition">
+            <button className="px-6 py-3 border rounded-md hover:bg-white hover:text-black transition">
               Talk to sales
             </button>
           </motion.div>

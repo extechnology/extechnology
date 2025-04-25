@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { TextReveal } from "../magicui/text-reveal";
 
 const lines = [
   "EXTECHNOLOGY IS A DYNAMIC TECHNOLOGY FIRM SPECIALIZING IN",
@@ -8,27 +7,9 @@ const lines = [
   "COMMITMENT TO INNOVATION AND EXCELLENCE.",
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
 
-const lineVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
 
 export default function GridIntro() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <section className="relative md:min-h-screen flex items-center justify-center px-4 md:px-16 bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]  overflow-hidden">
@@ -64,19 +45,15 @@ export default function GridIntro() {
         </div>
 
         {/* Animated Text Section */}
-        <motion.div
-          ref={ref}
+        <div
           className="relative z-10  text-white  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
         >
           {lines.map((line, idx) => (
-            <motion.p key={idx} variants={lineVariants}>
-              {line}
-            </motion.p>
+            <p key={idx} >
+              <TextReveal>{line}</TextReveal>
+            </p>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
