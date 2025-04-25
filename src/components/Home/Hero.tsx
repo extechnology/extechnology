@@ -37,7 +37,7 @@ const Hero = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative content-center items-center justify-center border-b border-sky-700 min-h-screen px-4 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden"
+        className="relative content-center items-center justify-center border-b border-sky-700 md:min-h-screen h-[80vh] px-4 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden"
       >
         {/* Base background */}
         <div
