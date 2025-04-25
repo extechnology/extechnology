@@ -93,14 +93,14 @@ const Navbar = () => {
             <div className="hidden md:flex items-center flex-1 justify-center">
               <nav className="flex items-center space-x-6">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.href}
                     className={`font-semibold  transition-colors flex items-center space-x-1 relative group text-primary`}
                   >
                     <span className="ml-1">{item.label}</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
