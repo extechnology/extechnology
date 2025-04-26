@@ -5,17 +5,17 @@ const SlideData = [
   {
     title: `Innovation Design& Exceptional UX`,
     desc: `We dont just write code, we craft seamless, user-friendly experiences that drive success.`,
+    image: "/2 (1).svg",
+  },
+  {
+    title: `Clean Scalable Code`,
+    desc: `Our code follows best practices,making efficient,maintainable,and scalable for future growth.`,
+    image: "/unsplash_UWMKm7K0dgo.svg",
+  },
+  {
+    title: `Competitive Pricing and flexible Plans`,
+    desc: `We offer cost-effective solutions tailored for startups and enterprises.`,
     image: "/unsplash_MyRHFbfRI0Q.svg",
-  },
-  {
-    title: `Crafting Clean Interfaces`,
-    desc: `From wireframes to pixel-perfect UI, we design solutions that users love and understand.`,
-    image: "/unsplash_UWMKm7K0dgo.svg",
-  },
-  {
-    title: `Speed and Performance First`,
-    desc: `We prioritize lightning-fast, accessible applications with beautiful design.`,
-    image: "/unsplash_UWMKm7K0dgo.svg",
   },
 ];
 

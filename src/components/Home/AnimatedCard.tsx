@@ -35,13 +35,18 @@ const AnimatedCard = () => {
   };
 
   return (
-    <div className=" bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 pt-12 pb-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 pt-12 pb-20">
+      <img
+        src="/Group 115657 (2).png"
+        alt=""
+        className="md:flex hidden absolute left-11"
+      />
+      <div className="transform translate-y-40 translate-x-8 max-w-7xl mx-auto px-4 pb-60">
         <div className=" justify-between items-center">
-          <h1 className=" text-4xl md:text-5xl text-center md:text-start font-semibold">
+          <h1 className=" text-4xl md:text-6xl text-center md:text-start font-semibold">
             We Provide
           </h1>
-          <div className="hidden md:flex justify-end gap-4">
+          <div className="hidden md:flex justify-end gap-4 pr-9">
             <button
               onClick={handlePrev}
               title="Previous"
@@ -60,7 +65,7 @@ const AnimatedCard = () => {
           </div>
         </div>
 
-        <div className="flex mt-10 gap-4 overflow-hidden h-[400px]">
+        <div className="flex mt-10 gap-4 overflow-hidden h-[500px]">
           <AnimatePresence mode="wait">
             {cards.map((item, index) => {
               const isActive = index === activeIndex;
