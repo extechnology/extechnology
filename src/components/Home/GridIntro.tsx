@@ -22,7 +22,7 @@ export default function GridIntro() {
         <div className="absolute bottom-12 left-12 w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full filter blur-3xl opacity-30" />
 
         {/* Top right gradient blur accent */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full filter blur-3xl opacity-30" />
+        <div className="absolute top-0 -right-10 w-48 h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full filter blur-3xl opacity-30" />
       </div>
 
       {/* Grid container that matches text width */}
@@ -45,11 +45,9 @@ export default function GridIntro() {
         </div>
 
         {/* Animated Text Section */}
-        <div
-          className="relative z-10  text-white py-10  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5"
-        >
+        <div className="relative z-10  text-white py-10  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5">
           {lines.map((line, idx) => (
-            <p key={idx} >
+            <p key={idx}>
               <TextReveal>{line}</TextReveal>
             </p>
           ))}

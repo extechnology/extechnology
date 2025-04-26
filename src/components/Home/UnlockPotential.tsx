@@ -5,10 +5,10 @@ import PotentialGrid from "./PotentialGrid";
 
 const lines = [
   "Empower Business By Providing The Most Advanced IT Solutions And Exceptional Service",
-  "Ensuring Our Clients Achieve Operational Efficiency, Security And Innovation",
+  "Ensuring Our Clients Achieve Operational Efficiency,Security And Innovation",
   "Tailored Digital Solutions that Enhance User Experiences And Drive Business Growth.",
-  "We embrace the latest technologies and agile methodologies to",
-  "Certified Experts With Deep Industry Knowledge And Hands-On Experience In Delivering Scalable Solutions",
+  "We embrace the latest technologies and agile methodologies to build future-ready digital solutions",
+  "Certified experts with deep industry knowledge and hands-on experience in delivering scalable IT solutions",
 ];
 
 const containerVariants = {
@@ -31,6 +31,7 @@ const lineVariants = {
 
 const UnlockPotential: React.FC = () => {
   const ref = useRef(null);
+  
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
@@ -38,8 +39,9 @@ const UnlockPotential: React.FC = () => {
       <div className="relative">
         <PotentialGrid />
       </div>
-      <section className="relative z-5 flex items-center justify-center px-4 md:px-16 pt-16 md:pt-40 pb-20 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden">
+      <section className="relative z-5 flex items-center justify-center px-4 md:px-16 pt-16 md:pt-56 pb-55 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden">
         {/* Background Layer with Gradient */}
+        <img src="/Group 115657.png" alt="" className="absolute pb-10" />
         <div className="absolute  inset-0 z-0 overflow-hidden">
           {/* Main gradient background */}
           <div className="absolute  inset-0 bg-gradient-to-tr from-purple-800 via-black to-black opacity-10" />
@@ -52,7 +54,7 @@ const UnlockPotential: React.FC = () => {
         </div>
 
         {/* Grid container that matches text width */}
-        <div className="relative   max-w-6xl w-full">
+        <div className="relative content-center  max-w-6xl w-full">
           {/* ✅ Grid pattern - hidden on mobile */}
           <div className="absolute  inset-0 items-center justify-center hidden md:flex">
             <div
@@ -73,17 +75,20 @@ const UnlockPotential: React.FC = () => {
           {/* ✅ Animated Text Section (always visible) */}
           <motion.div
             ref={ref}
-            className="relative z-10 font-bold  text-md md:text-xl lg:text-2xl grid grid-cols-1 md:grid-cols-3 items-center space-y-18  content-center gap-10"
+            className="relative z-10 font-bold text-md md:text-xl lg:text-2xl flex space-y-8 flex-wrap justify-center items-center gap-10"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
             {lines.map((line, idx) => (
-              <div key={idx}>
+              <div
+                key={idx}
+                className="w-full md:w-auto md:max-w-[30%] px-4" // Adjust width as needed
+              >
                 <div className="flex justify-center pb-3">
                   <img src="/Vector.svg" alt="" />
                 </div>
-                <motion.p variants={lineVariants} className="text-center">
+                <motion.p variants={lineVariants} className="text-center ">
                   {line}
                 </motion.p>
               </div>

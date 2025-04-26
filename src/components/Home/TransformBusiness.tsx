@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+
 
 const TransformBusiness = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -54,13 +56,23 @@ const TransformBusiness = () => {
               With Our Services
             </h1>
           </div>
-          <div className="absolute hidden md:flex z-21 left-0 top-35">
-            <img
+          <img
+            src="/Group (1).png"
+            alt=""
+            className="absolute right-50 top-80 -rotate-45 w-24"
+          />
+
+          <div className="absolute hidden md:flex z-21 left-0 top-50">
+            <img src="/Group 115682.png" alt="" className="relative " />
+            <motion.img
               src="/1 (2).svg"
               alt=""
-              className=" hover:transform hover:rotate-90 transition-all duration-1000"
+              className="transform -translate-x-150 translate-y-10"
+              whileHover={{
+                rotate: 90,
+                transition: { duration: 1 },
+              }}
             />
-            {/* <img src="/Arrow_02.svg" alt="" className="text-white" /> */}
           </div>
         </div>
       </section>

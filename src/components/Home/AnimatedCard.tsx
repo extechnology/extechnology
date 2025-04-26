@@ -35,7 +35,7 @@ const AnimatedCard = () => {
   };
 
   return (
-    <div className=" bg-[var(--bg-color)] text-[var(--text-color)] md:pt-40 pt-12 pb-20">
+    <div className=" bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 pt-12 pb-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className=" justify-between items-center">
           <h1 className=" text-4xl md:text-5xl text-center md:text-start font-semibold">

@@ -77,7 +77,7 @@ const Navbar = () => {
       <div
         className={`transition-all duration-500 ease-in-out  ${
           isScrolled
-            ? "md:w-[85%] w-[94%] rounded-full  text-[var(--text-color)] bg-[var(--bg-color)] backdrop-blur-lg border border-white/10 shadow-sm bg-opacity-80 shadow-[#9f36f8] transform-gpu"
+            ? "md:w-[85%] w-[94%] rounded-full  text-[var(--text-color)]  backdrop-blur-lg border border-white/10 shadow-sm bg-opacity-80 shadow-[#9f36f8] transform-gpu"
             : "w-full bg-transparent text-[var(--text-color)] transform-gpu"
         }`}
       >

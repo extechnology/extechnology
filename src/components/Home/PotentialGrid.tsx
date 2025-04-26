@@ -46,6 +46,8 @@ const PotentialGrid = () => {
 
         {/* Foreground Content */}
         <div className="relative z-20 py-10 text-center">
+          <img src="/Group (2).svg" alt="" className="w-12 absolute left-70 top-80" />
+
           <div>
             <h1 className="text-xl md:text-7xl font-bold leading-snug m-0">
               Unlock The Full Potential of
@@ -58,8 +60,9 @@ const PotentialGrid = () => {
             <img
               src="2.svg"
               alt=""
-              className="hover:transform hover:rotate-90 transition-all duration-1000"
+              className="transform translate-x-140 hover:-rotate-45 transition-all duration-1000"
             />
+            <img src="/Group 115681.png" alt="" />
           </div>
         </div>
       </section>

@@ -87,7 +87,7 @@ const Hero = () => {
         {/* Buttons — moved outside so they don’t rotate */}
         <div className="relative z-20 md:top-32 top-20 space-y-5 md:space-y-0 md:flex justify-center items-center gap-4">
           <motion.div style={{ x: leftBtnX }} className="flex justify-center">
-            <div className="p-[1px] rounded-md bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500 transition-all duration-300 inline-block">
+            <div className="p-[1px] rounded-md hover:rounded-full transform transition-all bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500 transition-all duration-300 inline-block">
               <button className="bg-black text-white px-6 py-3 rounded-md hover:rounded-full transition-all duration-300">
                 Get Started →
               </button>

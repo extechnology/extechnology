@@ -82,6 +82,8 @@ const WhyChooseUs = () => {
       <div className=" bg-[var(--bg-color)] text-[var(--text-color)]  grid grid-cols-1 md:grid-cols-2 items-center max-w-7xl mx-auto h-screen md:px-6">
         {/* Text Section */}
         <div className="relative border h-full py-8 flex items-center justify-center">
+          <div className="absolute top-20 left-12 w-[200px] h-[200px] opacity-70 bg-gradient-to-br from-[#A604F2] via-pink-500/20 to-transparent rounded-full blur-[100px]" />
+
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -101,6 +103,9 @@ const WhyChooseUs = () => {
               </div>
             </motion.div>
           </AnimatePresence>
+          <div>
+            <img src="/Group.png" alt="" className="absolute top-30 right-20" />
+          </div>
         </div>
 
         {/* Image Section */}
@@ -117,6 +122,14 @@ const WhyChooseUs = () => {
               className="rounded-lg w-3/4 object-cover absolute"
             />
           </AnimatePresence>
+          <div>
+            <img
+              src="/Group.png"
+              alt=""
+              className="absolute bottom-0 right-40 -rotate-90"
+            />
+          </div>
+          <div className="absolute bottom-0 right-0 w-[200px] h-[200px] bg-gradient-to-br opacity-70 from-[#A604F2] via-pink-500/20 to-transparent rounded-full blur-[100px]" />
         </div>
       </div>
     </div>
