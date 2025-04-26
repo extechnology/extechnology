@@ -72,7 +72,7 @@ const Footer = () => {
                 <li key={idx}>
                   <Link
                     to={link.path}
-                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-gray-300 hover:text-white hover:scale-105 hover:duration-300 transition-all"
                   >
                     <BsChevronRight className="text-purple-500" /> {link.label}
                   </Link>

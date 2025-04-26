@@ -11,14 +11,20 @@ const cards = [
   },
   {
     title: "MOBILE APPLICATIONS",
-    desc: "Design and develop intuitive mobile apps for iOS and Android.",
-    image: "/11271176_e_commerce_business_web_store_icon.png",
+    desc: "Develop intuitive and engaging mobile apps that transform user experiences.",
+    image: "/11850102_platform_notification_e-commerce and shopping_adobe_podium_icon 1.png",
     gradient: "from-gray-900 via-gray-800 to-gray-700",
   },
   {
-    title: "CLOUD SOLUTIONS",
-    desc: "Leverage cloud platforms for scalable and secure infrastructure.",
-    image: "/11271176_e_commerce_business_web_store_icon.png",
+    title: "AI INTEGRATED APPLICATIONS",
+    desc: "Create automated and interactive chatbots that enhance customer conversations.",
+    image: "/25845660_ecommercev2_5 1.png",
+    gradient: "from-blue-900 via-blue-600 to-purple-700",
+  },
+  {
+    title: "CRM APPLICATIONS",
+    desc: "Create automated and interactive chatbots that enhance customer conversations.",
+    image: "/crm-removebg-preview 1.png",
     gradient: "from-blue-900 via-blue-600 to-purple-700",
   },
 ];
@@ -43,7 +49,11 @@ const AnimatedCard = () => {
       />
       <div className="transform translate-y-40 translate-x-8 max-w-7xl mx-auto px-4 pb-60">
         <div className=" justify-between items-center">
-          <h1 className=" text-4xl md:text-6xl text-center md:text-start font-semibold">
+          <h1
+            className=" text-4xl md:text-6xl text-center md:text-start font-semibold"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             We Provide
           </h1>
           <div className="hidden md:flex justify-end gap-4 pr-9">
@@ -51,6 +61,8 @@ const AnimatedCard = () => {
               onClick={handlePrev}
               title="Previous"
               className="border border-purple-500 rounded py-3 px-8"
+              data-aos="zoom-out-up"
+              data-aos-duration="1000"
             >
               <ArrowLeft className="text-purple-400" />
             </button>
@@ -59,6 +71,8 @@ const AnimatedCard = () => {
               onClick={handleNext}
               title="Next"
               className="border border-purple-500 rounded py-3 px-8"
+              data-aos="zoom-out-up"
+              data-aos-duration="1000"
             >
               <ArrowRight className="text-purple-400" />
             </button>

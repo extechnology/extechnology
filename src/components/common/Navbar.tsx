@@ -75,10 +75,10 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 py-3 ">
       <div
-        className={`transition-all duration-500 ease-in-out  ${
+        className={`transition-all duration-500 ease-in-out ${
           isScrolled
-            ? "md:w-[85%] w-[94%] rounded-full  text-[var(--text-color)]  backdrop-blur-lg border border-white/10 shadow-sm bg-opacity-80 shadow-[#9f36f8] transform-gpu"
-            : "w-full bg-transparent text-[var(--text-color)] transform-gpu"
+            ? "md:w-[85%] w-[94%] rounded-full text-[var(--text-color)] backdrop-blur-lg border border-white/10 bg-opacity-80 [box-shadow:0_0_15px_5px_rgba(159,54,248,0.3)]"
+            : "w-full bg-transparent text-[var(--text-color)]"
         }`}
       >
         <div className="container mx-auto md:px-4">
@@ -103,12 +103,12 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center flex-1 justify-center">
-              <nav className="flex items-center space-x-6">
+              <nav className="flex items-center space-x-10">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.href}
-                    className={`font-semibold  transition-colors flex items-center space-x-1 relative group text-primary`}
+                    className={`transition-colors flex items-center space-x-1 relative group text-primary`}
                   >
                     <span className="ml-1">{item.label}</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
@@ -136,7 +136,7 @@ const Navbar = () => {
               <button className="px-4 py-1 border border-gray-400 rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2">
                 {/* <Mail className="w-4 h-4" /> */}
                 <Link to={"/contact"}>
-                  <span>Contact</span>
+                  <span>Contact Us</span>
                 </Link>
               </button>
             </div>

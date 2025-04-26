@@ -73,7 +73,11 @@ const WhyChooseUs = () => {
 
         {/* Foreground Content */}
         <div className="relative z-20 text-center  ">
-          <h1 className="text-3xl md:text-7xl font-bold leading-snug tracking-wider m-0">
+          <h1
+            className="text-3xl md:text-7xl font-bold leading-snug tracking-wider m-0"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
             Why Choose Us
           </h1>
         </div>
@@ -104,7 +108,13 @@ const WhyChooseUs = () => {
             </motion.div>
           </AnimatePresence>
           <div>
-            <img src="/Group.png" alt="" className="absolute top-30 right-20" />
+            <img
+              src="/Group.png"
+              alt=""
+              className="absolute top-30 right-20"
+              data-aos="zoom-out-up"
+              data-aos-duration="1200"
+            />
           </div>
         </div>
 
@@ -127,6 +137,8 @@ const WhyChooseUs = () => {
               src="/Group.png"
               alt=""
               className="absolute bottom-0 right-40 -rotate-90"
+              data-aos="zoom-out-up"
+              data-aos-duration="1200"
             />
           </div>
           <div className="absolute bottom-0 right-0 w-[200px] h-[200px] bg-gradient-to-br opacity-70 from-[#A604F2] via-pink-500/20 to-transparent rounded-full blur-[100px]" />

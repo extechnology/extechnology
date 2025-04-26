@@ -26,7 +26,7 @@ export default function GridIntro() {
       </div>
 
       {/* Grid container that matches text width */}
-      <div className="relative max-w-6xl w-full">
+      <div className="relative max-w-7xl w-full">
         {/* Grid pattern - positioned behind text only */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div
@@ -45,7 +45,7 @@ export default function GridIntro() {
         </div>
 
         {/* Animated Text Section */}
-        <div className="relative z-10  text-white py-10  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-5">
+        <div className="relative z-10  text-white py-10  font-bold text-lg md:text-2xl lg:text-4xl  text-left space-y-8">
           {lines.map((line, idx) => (
             <p key={idx}>
               <TextReveal>{line}</TextReveal>

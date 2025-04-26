@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+
 
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -8,6 +10,12 @@ html {
 body {
   font-family: "Geist Mono", monospace;
   font-optical-sizing: auto;
+  font-style: normal;
+}
+
+header{
+  font-family: "Actor", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -35,7 +43,13 @@ body {
 }
 
 
-
+.navbar-glow {
+  box-shadow: 
+    10px 10px 15px -5px rgba(159, 54, 248, 0.3), /* Right */
+    -10px 10px 15px -5px rgba(159, 54, 248, 0.3), /* Left */
+    0 10px 15px -5px rgba(159, 54, 248, 0.3), /* Bottom */
+    0 -2px 10px 0 rgba(255,255,255,0.1);
+}
 
 .custom-dashed {
   border-bottom-style: dashed;

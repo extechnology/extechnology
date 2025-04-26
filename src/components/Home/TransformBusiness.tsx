@@ -49,10 +49,17 @@ const TransformBusiness = () => {
         {/* Foreground Content */}
         <div className="relative z-20 text-center py-5">
           <div>
-            <h1 className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0">
+            <h1
+              className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0"
+              data-aos="fade-up"
+            >
               Transform Your Business
             </h1>
-            <h1 className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0">
+            <h1
+              className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               With Our Services
             </h1>
           </div>
@@ -60,6 +67,8 @@ const TransformBusiness = () => {
             src="/Group (1).png"
             alt=""
             className="absolute right-50 top-80 -rotate-45 w-24"
+            data-aos="zoom-out-up"
+            data-aos-duration="1200"
           />
 
           <div className="absolute hidden md:flex z-21 left-0 top-50">
@@ -72,6 +81,8 @@ const TransformBusiness = () => {
                 rotate: 90,
                 transition: { duration: 1 },
               }}
+              data-aos="zoom-out-up"
+              data-aos-duration="1200"
             />
           </div>
         </div>

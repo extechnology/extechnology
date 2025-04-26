@@ -8,7 +8,24 @@ import AboutUs from "./pages/About";
 import Vision from "./pages/Vision";
 import Services from "./pages/Services";
 import "./App.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
+
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 900, // Animation duration
+      easing: "ease-in-out", // Easing type
+      once: false, // Whether animation should happen only once
+    });
+
+    // Refresh AOS when components are loaded dynamically
+    AOS.refresh();
+  }, []);
+
   return (
     <BrowserRouter>
       <ThemeProvider>
