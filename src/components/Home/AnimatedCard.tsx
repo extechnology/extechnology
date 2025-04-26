@@ -12,7 +12,8 @@ const cards = [
   {
     title: "MOBILE APPLICATIONS",
     desc: "Develop intuitive and engaging mobile apps that transform user experiences.",
-    image: "/11850102_platform_notification_e-commerce and shopping_adobe_podium_icon 1.png",
+    image:
+      "/11850102_platform_notification_e-commerce and shopping_adobe_podium_icon 1.png",
     gradient: "from-gray-900 via-gray-800 to-gray-700",
   },
   {
@@ -47,7 +48,7 @@ const AnimatedCard = () => {
         alt=""
         className="md:flex hidden absolute left-11"
       />
-      <div className="transform translate-y-40 translate-x-8 max-w-7xl mx-auto px-4 pb-60">
+      <div className="transform translate-y-40 pl-12 max-w-7xl mx-auto px-4 pb-60">
         <div className=" justify-between items-center">
           <h1
             className=" text-4xl md:text-6xl text-center md:text-start font-semibold"
@@ -56,7 +57,7 @@ const AnimatedCard = () => {
           >
             We Provide
           </h1>
-          <div className="hidden md:flex justify-end gap-4 pr-9">
+          <div className="hidden md:flex justify-end gap-4 pr-16">
             <button
               onClick={handlePrev}
               title="Previous"
@@ -79,7 +80,7 @@ const AnimatedCard = () => {
           </div>
         </div>
 
-        <div className="flex mt-10 gap-4 overflow-hidden h-[500px]">
+        <div className="flex mt-10 gap-4  h-[500px]">
           <AnimatePresence mode="wait">
             {cards.map((item, index) => {
               const isActive = index === activeIndex;
@@ -91,11 +92,11 @@ const AnimatedCard = () => {
                 <motion.div
                   key={index}
                   initial={{
-                    width: isActive ? "60%" : isNext ? "30%" : "10%",
+                    width: isActive ? "80%" : isNext ? "40%" : "0%",
                     opacity: isActive ? 1 : 0.7,
                   }}
                   animate={{
-                    width: isActive ? "60%" : isNext ? "30%" : "10%",
+                    width: isActive ? "80%" : isNext ? "40%" : "0%",
                     opacity: isActive ? 1 : 0.7,
                   }}
                   exit={{
@@ -137,13 +138,13 @@ const AnimatedCard = () => {
                       </>
                     ) : (
                       <>
-                        <h3 className="text-lg font-bold mb-2 text-center">
+                        <h3 className="text-lg md:text-2xl font-bold mb-2 text-center">
                           {item.title}
                         </h3>
                         <img
                           src={item.image}
                           alt="icon"
-                          className="w-full object-contain"
+                          className="w-[80%] mx-auto object-contain"
                         />
                         <button className="border mt-5 border-white rounded px-4 py-2 w-fit">
                           Learn More →

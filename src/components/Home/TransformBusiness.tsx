@@ -79,7 +79,7 @@ const TransformBusiness = () => {
               className="transform -translate-x-150 translate-y-10"
               whileHover={{
                 rotate: 90,
-                transition: { duration: 1 },
+                transition: { duration: .2 },
               }}
               data-aos="zoom-out-up"
               data-aos-duration="1200"

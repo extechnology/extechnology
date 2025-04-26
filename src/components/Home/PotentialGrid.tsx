@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+
 
 const PotentialGrid = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -71,11 +73,15 @@ const PotentialGrid = () => {
             </h1>
           </div>
           <div className="absolute hidden md:flex right-0 -bottom-90 overflow-visible ">
-            <img
+            <motion.img
               src="2.svg"
               alt=""
-              className="transform translate-x-140 hover:-rotate-45 transition-all duration-1000"
-              data-aos="zoom-out-up"
+              className="transform translate-x-140  "
+              whileHover={{
+                rotate: -45,
+                transition: { duration: 0.1 },
+              }}
+              data-aos="fade-up"
               data-aos-duration="1200"
             />
             <img src="/Group 115681.png" alt="" />
