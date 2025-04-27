@@ -108,7 +108,7 @@ const ScrollCarousel = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-[var(--bg-color)] text-[var(--text-color)] py-20 relative"
+      className="bg-[var(--bg-color)] text-[var(--text-color)] md:py-20 pt-10 relative"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row h-screen">
         {/* Left side - Fixed Text */}

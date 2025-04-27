@@ -42,13 +42,13 @@ const AnimatedCard = () => {
   };
 
   return (
-    <div className="bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 pt-12 pb-20">
+    <div className="bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56  md:pb-20">
       <img
         src="/Group 115657 (2).png"
         alt=""
         className="md:flex hidden absolute left-11"
       />
-      <div className="transform translate-y-40 pl-12 max-w-7xl mx-auto px-4 pb-60">
+      <div className="transform md:translate-y-40 py-12 md:pt-0 pl-12 max-w-7xl mx-auto px-4 md:pb-60 ">
         <div className=" justify-between items-center">
           <h1
             className=" text-4xl md:text-6xl text-center md:text-start font-semibold"

@@ -7,21 +7,35 @@ const Vision = () => {
             src="/Image And Frame.svg"
             alt=""
             className="opacity-30 w-[90%] mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           />
         </div>
         <div className=" md:w-1/2">
-          <h1 className="md:text-6xl text-5xl px-5 pt-5 md:pt-0 md:px-0 font-bold pb-5 text-center">
+          <h1
+            className="md:text-6xl text-5xl px-5 pt-5 md:pt-0 md:px-0 font-bold pb-5 text-center"
+            data-aos="fade-up"
+            data-aos-duration="900"
+          >
             Our Mission & Vision
           </h1>
           <div className="px-5 md:px-0">
-            <p className="text-2xl pb-4 text-justify">
+            <p
+              className="text-2xl pb-4 text-justify"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               extechnology aims to empower businesses by providing the most
               advanced IT solutions and exceptional service, ensuring our
               clients achieve ,operational efficiency,security and innovation.
               We are committed to delivering tailored technology services that
               drive business success and foster long-term partnership
             </p>
-            <p className="text-2xl text-justify">
+            <p
+              className="text-2xl text-justify"
+              data-aos="fade-up"
+              data-aos-duration="1100"
+            >
               A future where business of all sizes leverage advanced IT
               solutions to overcome challenges, achieve their goals, and stay
               ahead in a rapidly evolving digital landscape. We aspire to be a

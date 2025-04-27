@@ -8,6 +8,7 @@ const links = [
   { label: "Services", path: "/service" },
   { label: "About Us", path: "/about" },
   { label: "Vision", path: "/vision" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const Footer = () => {

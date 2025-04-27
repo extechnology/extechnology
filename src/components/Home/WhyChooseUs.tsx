@@ -72,7 +72,8 @@ const WhyChooseUs = () => {
         )}
 
         {/* Foreground Content */}
-        <div className="relative z-20 text-center  ">
+        <div className="relative z-20 text-center flex  ">
+          <img src="/1 (2).svg" alt="" className="md:hidden absolute -left-43 -top-12 -rotate-10 w-[61%]" />
           <h1
             className="text-3xl md:text-7xl font-bold leading-snug tracking-wider m-0"
             data-aos="fade-up"

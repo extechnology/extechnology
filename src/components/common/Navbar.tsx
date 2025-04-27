@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
-import { User, LogIn, Tag, Home, Sun, Moon, Menu, X } from "lucide-react";
+import {
+  User,
+  LogIn,
+  Tag,
+  Home,
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Contact,
+} from "lucide-react";
 // import { useIsMobile } from "../../hooks/useMobile";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -133,7 +143,7 @@ const Navbar = () => {
               </button>
 
               {/* Contact Button */}
-              <button className="px-4 py-1 border border-gray-400 rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2">
+              <button className="px-4 py-1 border border-gray-400 rounded-lg hover:bg-primary hover:text-[var(--bg-color)] transition-colors flex items-center space-x-2">
                 {/* <Mail className="w-4 h-4" /> */}
                 <Link to={"/contact"}>
                   <span>Contact Us</span>
@@ -200,6 +210,18 @@ const Navbar = () => {
                     <span>{item.label}</span>
                   </Link>
                 ))}
+                <div className="flex justify-center text-white">
+                  <Link
+                    to={"/contact"}
+                    className=" flex gap-3"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <div className="content-center rounded-full bg-white/5 border border-white/10 p-2">
+                      <User className="w-4 h-4" />
+                    </div>
+                    <div className="content-center">Contact Us</div>
+                  </Link>
+                </div>
               </nav>
             </div>
           )}

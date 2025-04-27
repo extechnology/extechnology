@@ -44,7 +44,11 @@ const Services = () => {
   return (
     <div className="bg-[var(--bg-color)] text-[var(--text-color)]">
       <div className="max-w-7xl mx-auto pt-24">
-        <h1 className="md:text-7xl text-5xl px-5 md:px-0 font-bold pt-10 text-center">
+        <h1
+          className="md:text-7xl text-5xl px-5 md:px-0 font-bold pt-10 text-center"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           Our Services
         </h1>
         <div className="">
@@ -53,14 +57,29 @@ const Services = () => {
               key={index}
               className="pb-6 border-b border-dashed px-5 md:px-0 custom-dashed not-last:border-b border-sky-500 flex flex-col items-center  "
             >
-              <h1 className="md:text-4xl text-2xl  pt-14 pb-8 text-center font-bold text-[#9F37F8] ">
+              <h1
+                className="md:text-4xl text-2xl  pt-14 pb-8 text-center font-bold text-[#9F37F8] "
+                data-aos="fade-up"
+                data-aos-duration="900"
+              >
                 {item.title}
               </h1>
-              <img src={item.image} alt="" />
-              <p className="text-2xl pt-10 pb-3 text-justify">
+              <img
+                src={item.image}
+                alt=""
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              />
+              <p
+                className="text-2xl pt-10 pb-3 text-justify"
+                data-aos="fade-up"
+                data-aos-duration="1100"
+              >
                 {item.description}
               </p>
-              <p className="text-2xl py-2 text-justify">{item.sub_desc}</p>
+              <p className="text-2xl py-2 text-justify" data-aos="fade-up" data-aos-duration="1200">
+                {item.sub_desc}
+              </p>
             </div>
           ))}
         </div>

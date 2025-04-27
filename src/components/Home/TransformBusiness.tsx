@@ -16,7 +16,7 @@ const TransformBusiness = () => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
-        className="relative content-center items-center border border-sky-600  md:min-h-screen px-4  bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]"
+        className="relative content-center items-center border border-sky-600  md:min-h-screen h-[150px] px-4  bg-[var(--secondary-bg-color)] text-[var(--secondary-text-color)]"
       >
         {/* Base background at 30% opacity */}
         <div
@@ -49,6 +49,12 @@ const TransformBusiness = () => {
         {/* Foreground Content */}
         <div className="relative z-20 text-center py-5">
           <div>
+            <img
+              src="/1 (2).svg"
+              alt=""
+              className="md:hidden absolute -left-30 -top-0 -rotate-10 w-[40%]"
+            />
+
             <h1
               className="text-2xl md:text-7xl font-bold leading-snug tracking-wider m-0"
               data-aos="fade-up"
@@ -66,7 +72,7 @@ const TransformBusiness = () => {
           <img
             src="/Group (1).png"
             alt=""
-            className="absolute right-50 top-80 -rotate-45 w-24"
+            className="absolute right-50 top-80 -rotate-45 w-24 hidden md:block"
             data-aos="zoom-out-up"
             data-aos-duration="1200"
           />
@@ -79,7 +85,7 @@ const TransformBusiness = () => {
               className="transform -translate-x-150 translate-y-10"
               whileHover={{
                 rotate: 90,
-                transition: { duration: .2 },
+                transition: { duration: 0.2 },
               }}
               data-aos="zoom-out-up"
               data-aos-duration="1200"

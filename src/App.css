@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
 
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 body {
   font-family: "Geist Mono", monospace;
@@ -13,7 +11,7 @@ body {
   font-style: normal;
 }
 
-header{
+header {
   font-family: "Actor", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -22,51 +20,56 @@ header{
 :root {
   --bg-color: white;
   --text-color: black;
-  --secondary-bg-color: #121B36; 
-  --secondary-text-color: white; 
-  --tertiary-bg-color: rgba(220, 200, 255, 1) ;
+  --secondary-bg-color: #121b36;
+  --secondary-text-color: white;
+  --tertiary-bg-color: rgba(220, 200, 255, 1);
   --tertiary-text-color: black;
   --quaternary-bg-color: rgba(220, 200, 255, 1);
   --border-color: #e5e7eb;
+  --border-secondary: black;
+  --button-bg-color: linear-gradient(
+    to right,
+    #9f36f8 0%,
+    #9f36f8 50%,
+    #21d6e2 50%,
+    #21d6e2 100%
+  );
 }
 
 .dark {
   --bg-color: black;
   --text-color: white;
-  --secondary-bg-color: black; 
-  --secondary-text-color: white; 
-  --tertiary-bg-color: #0e0e0e; 
-  --tertiary-text-color: white; 
+  --secondary-bg-color: black;
+  --secondary-text-color: white;
+  --tertiary-bg-color: #0e0e0e;
+  --tertiary-text-color: white;
   --quaternary-bg-color: #1c1c1c;
-  --border-color: #4B5563;
-
+  --border-color: #4b5563;
+  --border-secondary: white;
+  --button-bg-color: black;
 }
 
-
 .navbar-glow {
-  box-shadow: 
-    10px 10px 15px -5px rgba(159, 54, 248, 0.3), /* Right */
-    -10px 10px 15px -5px rgba(159, 54, 248, 0.3), /* Left */
-    0 10px 15px -5px rgba(159, 54, 248, 0.3), /* Bottom */
-    0 -2px 10px 0 rgba(255,255,255,0.1);
+  box-shadow: 10px 10px 15px -5px rgba(159, 54, 248, 0.3),
+    /* Right */ -10px 10px 15px -5px rgba(159, 54, 248, 0.3),
+    /* Left */ 0 10px 15px -5px rgba(159, 54, 248, 0.3),
+    /* Bottom */ 0 -2px 10px 0 rgba(255, 255, 255, 0.1);
 }
 
 .custom-dashed {
   border-bottom-style: dashed;
   border-bottom-width: 2px;
   border-image: none;
-  border-bottom: 4px dashed #9F37F8;
+  border-bottom: 4px dashed #9f37f8;
   border-bottom: 2px dashed;
   border-bottom-style: dashed;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
-
 
 .carousel-item {
   transition: opacity 0.5s ease, transform 0.5s ease;
   will-change: transform, opacity;
 }
-
