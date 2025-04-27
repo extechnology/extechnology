@@ -21,7 +21,7 @@ const Vision = () => {
           </h1>
           <div className="px-5 md:px-0">
             <p
-              className="text-2xl pb-4 text-justify"
+              className="md:text-2xl text-xl pb-4 text-justify"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
@@ -32,7 +32,7 @@ const Vision = () => {
               drive business success and foster long-term partnership
             </p>
             <p
-              className="text-2xl text-justify"
+              className="md:text-2xl text-xl text-justify"
               data-aos="fade-up"
               data-aos-duration="1100"
             >

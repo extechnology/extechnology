@@ -71,13 +71,13 @@ const Services = () => {
                 data-aos-duration="1000"
               />
               <p
-                className="text-2xl pt-10 pb-3 text-justify"
+                className="md:text-2xl text-xl pt-10 pb-3 text-justify"
                 data-aos="fade-up"
                 data-aos-duration="1100"
               >
                 {item.description}
               </p>
-              <p className="text-2xl py-2 text-justify" data-aos="fade-up" data-aos-duration="1200">
+              <p className="md:text-2xl text-xl py-2 text-justify" data-aos="fade-up" data-aos-duration="1200">
                 {item.sub_desc}
               </p>
             </div>
