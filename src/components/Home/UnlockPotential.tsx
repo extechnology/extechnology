@@ -90,7 +90,7 @@ const UnlockPotential: React.FC = () => {
       </div>
       <section className="relative z-5 flex items-center justify-center px-4 md:px-16 pt-16 md:pt-56 md:pb-55 pb-20 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden">
         {/* Background Layer with Gradient */}
-        <img src="/Group 115657.png" alt="" className="absolute pb-10" />
+        <img src="/Group 115657.png" alt="" className="absolute pb-10 hidden md:flex" />
         <div className="absolute  inset-0 z-0 overflow-hidden">
           {/* Main gradient background */}
           <div className="absolute  inset-0 bg-gradient-to-tr from-purple-800 via-black to-black opacity-10" />
