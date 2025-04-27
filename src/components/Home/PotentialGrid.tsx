@@ -51,7 +51,7 @@ const PotentialGrid = () => {
           <img
             src="/Group (2).svg"
             alt=""
-            className="w-12 absolute left-70 top-80"
+            className="w-12 absolute left-70 top-80 hidden md:flex"
             data-aos="zoom-out-up"
             data-aos-duration="1200"
           />

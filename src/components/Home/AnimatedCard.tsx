@@ -80,7 +80,7 @@ const AnimatedCard = () => {
           </div>
         </div>
 
-        <div className="flex mt-10 gap-4  h-[500px]">
+        <div className="flex mt-10 gap-4 h-[400px]  md:h-[500px]">
           <AnimatePresence mode="wait">
             {cards.map((item, index) => {
               const isActive = index === activeIndex;

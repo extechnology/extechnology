@@ -181,9 +181,9 @@ const Navbar = () => {
             >
               <nav className="flex flex-col space-y-8 w-full px-4">
                 {navItems.map((item, index) => (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.href}
                     style={{
                       transitionDelay: `${100 + index * 50}ms`,
                     }}
@@ -198,7 +198,7 @@ const Navbar = () => {
                       {item.icon}
                     </div>
                     <span>{item.label}</span>
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>

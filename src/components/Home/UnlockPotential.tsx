@@ -1,6 +1,6 @@
 import React from "react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useRef,useEffect,useState } from "react";
 import PotentialGrid from "./PotentialGrid";
 
 const lines = [
@@ -29,10 +29,59 @@ const lineVariants = {
   },
 };
 
+interface MousePosition {
+  x: number;
+  y: number;
+}
+
 const UnlockPotential: React.FC = () => {
   const ref = useRef(null);
-  
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [mousePosition, setMousePosition] = useState<MousePosition>({
+    x: 0,
+    y: 0,
+  });
+  console.log(mousePosition); // Log the mouse position to the console
+
+  // Motion values for smooth animation
+  const x = useMotionValue<number>(0);
+  const y = useMotionValue<number>(0);
+
+  // Transform mouse position to movement values
+  const xMove = useTransform<number, number>(x, [0, 1], [-15, 15]);
+  const yMove = useTransform<number, number>(y, [0, 1], [-15, 15]);
+
+  // const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!ref.current) return;
+
+      // Get bounding rect of the container
+      const rect = (ref.current as HTMLElement).getBoundingClientRect();
+
+      // Calculate mouse position relative to the container (0 to 1)
+      const xPos = (e.clientX - rect.left) / rect.width;
+      const yPos = (e.clientY - rect.top) / rect.height;
+
+      setMousePosition({ x: xPos, y: yPos });
+
+      // Smoothly animate to new position
+      animate(x, xPos, { duration: 0.5 });
+      animate(y, yPos, { duration: 0.5 });
+    };
+
+    if (isHovered) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [isHovered, x, y]);
 
   return (
     <div>
@@ -78,17 +127,25 @@ const UnlockPotential: React.FC = () => {
             className="relative z-10 font-bold text-md md:text-xl lg:text-2xl flex space-y-8 flex-wrap justify-center items-center gap-10"
             variants={containerVariants}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            animate="visible"
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
+            transition={{ type: "spring", damping: 20, stiffness: 300 }}
+            style={{
+              x: isHovered ? xMove : 0,
+              y: isHovered ? yMove : 0,
+            }}
           >
             {lines.map((line, idx) => (
               <div
                 key={idx}
-                className="w-full md:w-auto md:max-w-[30%] px-4" // Adjust width as needed
+                className="w-full md:w-auto md:max-w-[30%] px-4"
+                data-aos="fade-up"
               >
                 <div className="flex justify-center pb-3">
                   <img src="/Vector.svg" alt="" />
                 </div>
-                <motion.p variants={lineVariants} className="text-center ">
+                <motion.p variants={lineVariants} className="text-center">
                   {line}
                 </motion.p>
               </div>

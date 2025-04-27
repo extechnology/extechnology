@@ -111,7 +111,7 @@ const WhyChooseUs = () => {
             <img
               src="/Group.png"
               alt=""
-              className="absolute top-30 right-20"
+              className="absolute top-30 right-20 hidden md:flex"
               data-aos="zoom-out-up"
               data-aos-duration="1200"
             />
@@ -136,7 +136,7 @@ const WhyChooseUs = () => {
             <img
               src="/Group.png"
               alt=""
-              className="absolute bottom-0 right-40 -rotate-90"
+              className="absolute bottom-0 right-40 -rotate-90 hidden md:flex"
               data-aos="zoom-out-up"
               data-aos-duration="1200"
             />
