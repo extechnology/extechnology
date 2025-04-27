@@ -11,9 +11,9 @@ import "./App.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
-
   useEffect(() => {
     // Initialize AOS
     AOS.init({
@@ -30,13 +30,17 @@ function App() {
     <BrowserRouter>
       <ThemeProvider>
         <Navbar />
+
+        <ScrollToTop />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/vision" element={<Vision />} /> 
-          <Route path="/service" element={<Services />} /> 
+          <Route path="/vision" element={<Vision />} />
+          <Route path="/service" element={<Services />} />
         </Routes>
+
         <Footer />
       </ThemeProvider>
     </BrowserRouter>
