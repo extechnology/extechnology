@@ -217,7 +217,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="content-center rounded-full bg-white/5 border border-white/10 p-2">
-                      <User className="w-4 h-4" />
+                      <Contact className="w-4 h-4" />
                     </div>
                     <div className="content-center">Contact Us</div>
                   </Link>
