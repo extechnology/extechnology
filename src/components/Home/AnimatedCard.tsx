@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -32,6 +32,16 @@ const cards = [
 
 const AnimatedCard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % cards.length);
@@ -42,16 +52,16 @@ const AnimatedCard = () => {
   };
 
   return (
-    <div className="bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56  md:pb-20">
+    <div className="bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 md:pb-20">
       <img
         src="/Group 115657 (2).png"
         alt=""
         className="md:flex hidden absolute left-11"
       />
-      <div className="transform md:translate-y-40 py-12 md:pt-0 pl-12 max-w-7xl mx-auto px-4 md:pb-60 ">
-        <div className=" justify-between items-center">
+      <div className="transform md:translate-y-40 py-12 md:pt-0 md:pl-12 max-w-7xl mx-auto px-4 md:pb-60">
+        <div className="justify-between items-center">
           <h1
-            className=" text-4xl md:text-6xl text-center md:text-start font-semibold"
+            className="text-4xl md:text-6xl text-center md:text-start font-semibold"
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
@@ -80,81 +90,123 @@ const AnimatedCard = () => {
           </div>
         </div>
 
-        <div className="flex mt-10 gap-4 h-[400px]  md:h-[500px]">
+        <div
+          className={`flex justify-center mt-10 gap-4 ${
+            isMobile ? "overflow-x-auto no-scrollbar" : ""
+          } h-[450px] md:h-[500px]`}
+        >
           <AnimatePresence mode="wait">
-            {cards.map((item, index) => {
-              const isActive = index === activeIndex;
-              const isNext = index === (activeIndex + 1) % cards.length;
-              // const isPrev =
-              //   index === (activeIndex - 1 + cards.length) % cards.length;
-
-              return (
+            {isMobile ? (
+              // Mobile: Single card slider
+              <motion.div
+                key={activeIndex}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={(e, info) => {
+                  if (info.offset.x < -100) {
+                    handleNext();
+                  } else if (info.offset.x > 100) {
+                    handlePrev();
+                  }
+                }}
+                className=" flex-shrink-0"
+              >
                 <motion.div
-                  key={index}
-                  initial={{
-                    width: isActive ? "80%" : isNext ? "40%" : "0%",
-                    opacity: isActive ? 1 : 0.7,
-                  }}
-                  animate={{
-                    width: isActive ? "80%" : isNext ? "40%" : "0%",
-                    opacity: isActive ? 1 : 0.7,
-                  }}
-                  exit={{
-                    width: "10%",
-                    opacity: 0.7,
-                  }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className={`rounded-4xl overflow-hidden bg-gradient-to-r ${item.gradient} text-white flex flex-col justify-between min-h-full`}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5 }}
+                  className={`rounded-4xl overflow-hidden bg-gradient-to-r ${cards[activeIndex].gradient} text-white flex flex-col justify-between h-full mx-auto w-[90vw] max-w-md`}
                 >
-                  <div
-                    className={`px-7 py-10 h-full flex ${
-                      isActive
-                        ? "flex-row"
-                        : "flex-col justify-center items-center"
-                    }`}
+                  <div className="px-6 py-8 h-full flex flex-col justify-center items-center text-center">
+                    <h3 className="text-2xl font-bold mb-4 px-2">
+                      {cards[activeIndex].title}
+                    </h3>
+                    <img
+                      src={cards[activeIndex].image}
+                      alt="icon"
+                      className="w-full max-w-[280px] mx-auto object-contain my-4"
+                    />
+                    <button className="border border-white rounded-full px-6 py-2 mt-2 text-sm md:text-base">
+                      Learn More →
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ) : (
+              // Desktop: Your current layout
+              cards.map((item, index) => {
+                const isActive = index === activeIndex;
+                const isNext = index === (activeIndex + 1) % cards.length;
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{
+                      width: isActive ? "80%" : isNext ? "40%" : "0%",
+                      opacity: isActive ? 1 : 0.7,
+                    }}
+                    animate={{
+                      width: isActive ? "80%" : isNext ? "40%" : "0%",
+                      opacity: isActive ? 1 : 0.7,
+                    }}
+                    exit={{
+                      width: "10%",
+                      opacity: 0.7,
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className={`rounded-4xl overflow-hidden bg-gradient-to-r ${item.gradient} text-white flex flex-col justify-between min-h-full`}
                   >
-                    {isActive ? (
-                      <>
-                        <div className="w-1/2 pr-4 flex flex-col justify-between">
-                          <div>
-                            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                              {item.title}
-                            </h3>
-                            <p className="mb-4  md:text-2xl font-light text-white/90">
-                              {item.desc}
-                            </p>
+                    <div
+                      className={`px-7 py-10 h-full flex ${
+                        isActive
+                          ? "flex-row"
+                          : "flex-col justify-center items-center"
+                      }`}
+                    >
+                      {isActive ? (
+                        <>
+                          <div className="w-1/2 pr-4 flex flex-col justify-between">
+                            <div>
+                              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                                {item.title}
+                              </h3>
+                              <p className="mb-4 md:text-2xl font-light text-white/90">
+                                {item.desc}
+                              </p>
+                            </div>
+                            <button className="border border-white rounded px-4 py-2 w-fit">
+                              Learn More →
+                            </button>
                           </div>
-                          <button className="border border-white rounded px-4 py-2 w-fit">
-                            Learn More →
-                          </button>
-                        </div>
-                        <div className="w-1/2 flex justify-center items-center">
+                          <div className="w-1/2 flex justify-center items-center">
+                            <img
+                              src={item.image}
+                              alt="icon"
+                              className="w-full object-contain"
+                            />
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <h3 className="text-lg md:text-2xl font-bold mb-2 text-center">
+                            {item.title}
+                          </h3>
                           <img
                             src={item.image}
                             alt="icon"
-                            className="w-full object-contain"
+                            className="w-[80%] mx-auto object-contain"
                           />
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <h3 className="text-lg md:text-2xl font-bold mb-2 text-center">
-                          {item.title}
-                        </h3>
-                        <img
-                          src={item.image}
-                          alt="icon"
-                          className="w-[80%] mx-auto object-contain"
-                        />
-                        <button className="border mt-5 border-white rounded px-4 py-2 w-fit">
-                          Learn More →
-                        </button>
-                      </>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
+                          <button className="border mt-5 border-white rounded px-4 py-2 w-fit">
+                            Learn More →
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })
+            )}
           </AnimatePresence>
         </div>
       </div>
