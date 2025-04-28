@@ -14,7 +14,7 @@ const AboutUs = () => {
       {/* Purple Top Shadow */}
       <div className=" absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-800 via-purple-400 to-purple-800 blur-xl opacity-30" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-14 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pb-14 items-center relative z-10">
         {/* Left Side - Images with dashed borders */}
         <div className="relative md:flex space-y-5  gap-6">
           <div className="relative md:top-35">

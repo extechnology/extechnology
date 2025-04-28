@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "./components/common/ScrollToTop";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 function App() {
   useEffect(() => {
@@ -39,6 +41,8 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/vision" element={<Vision />} />
           <Route path="/service" element={<Services />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
 
         <Footer />
