@@ -4,7 +4,7 @@ const Vision = () => {
       <div className=" md:flex justify-center items-center max-w-7xl mx-auto pt-30 pb-20">
         <div className="md:w-1/2">
           <img
-            src="/Image And Frame.svg"
+            src="/Image And Frame (1).svg"
             alt=""
             className="opacity-30 w-[90%] mx-auto"
             data-aos="fade-up"

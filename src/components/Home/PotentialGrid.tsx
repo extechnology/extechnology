@@ -82,7 +82,7 @@ const PotentialGrid = () => {
                 transition: { duration: 0.1 },
               }}
               data-aos="fade-up"
-              data-aos-duration="1200"
+              data-aos-duration="1100"
             />
             <img src="/Group 115681.png" alt="" />
           </div>

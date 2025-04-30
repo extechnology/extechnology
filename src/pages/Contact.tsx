@@ -90,7 +90,7 @@ export default function Contact() {
           <div className="absolute bottom-90 right-40 w-28 h-28 bg-purple-500 blur-3xl rounded-full opacity-30 z-1" />
 
           <img
-            src="/Image box.svg"
+            src="/Image box (1).svg"
             alt="Robot"
             className="max-w-full h-auto object-contain md:rounded-r-xl md:rounded-l-none rounded-xl"
             data-aos="fade-up"

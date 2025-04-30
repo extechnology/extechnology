@@ -59,10 +59,12 @@ const Footer = () => {
                   <FaYoutube size={20} />
                 </span>
               </div>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                KINFRA Advanced Technology park,
-                <br /> Ramanattukara
-              </p>
+              <ul className="text-sm text-gray-300 space-y-2 leading-relaxed">
+                <li>Indo arcade</li>
+                <li>room no:412</li>
+                <li>Cherootty road calicut</li>
+                <li>9526123466</li>
+              </ul>
             </div>
 
             {/* Center - Quick Links */}
@@ -109,7 +111,7 @@ const Footer = () => {
             <Link to={"/terms"}>
               <p>Terms & conditions</p>
             </Link>
-          </div> 
+          </div>
         </div>
       </footer>
     </div>
