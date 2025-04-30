@@ -55,7 +55,7 @@ const Services = () => {
           {ServiceDetails.map((item, index) => (
             <div
               key={index}
-              className="pb-6 border-b border-dashed px-5 md:px-0 custom-dashed not-last:border-b border-sky-500 flex flex-col items-center  "
+              className="pb-6 px-5 md:px-0 custom-dashed not-last:border-b  flex flex-col items-center  "
             >
               <h1
                 className="md:text-4xl text-2xl  pt-14 pb-8 text-center font-bold text-[#9F37F8] "

@@ -57,13 +57,11 @@ header {
 }
 
 .custom-dashed {
-  border-bottom-style: dashed;
   border-bottom-width: 2px;
-  border-image: none;
-  border-bottom: 4px dashed #9f37f8;
-  border-bottom: 2px dashed;
   border-bottom-style: dashed;
+  border-bottom-color: #9f37f8;
 }
+
 
 ::-webkit-scrollbar {
   display: none;

@@ -113,12 +113,12 @@ const ScrollCarousel = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row h-screen">
         {/* Left side - Fixed Text */}
         <div
-          className={`w-full md:w-1/2 border p-5 ${
+          className={`w-full md:w-1/2 border  p-5 ${
             window.innerWidth < 768 ? "relative" : "h-screen sticky top-0"
           } flex items-center justify-center`}
         >
           <h1
-            className="md:text-5xl text-xl leading-relaxed px-8"
+            className="md:text-5xl text-xl text-slate-400 hover:text-white transition-all ease-in-out duration-500 leading-relaxed px-8"
             data-aos="fade-up"
           >
             Ex-technology delivers tailored digital solutions that enhance user

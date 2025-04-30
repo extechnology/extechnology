@@ -1,7 +1,8 @@
-import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram,FaPinterest, FaLinkedin, FaPhone, FaYoutube  } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsChevronRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { FaXTwitter } from "react-icons/fa6";
 
 const links = [
   { label: "Home", path: "/" },
@@ -50,20 +51,59 @@ const Footer = () => {
               />
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
-                  <FaFacebookF size={20} />
+                  <a
+                    title="facebook"
+                    href="https://www.facebook.com/extechnology.in/"
+                  >
+                    <FaFacebookF size={20} />
+                  </a>
                 </span>
                 <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
-                  <FaTwitter size={20} />
+                  <a
+                    href="https://in.pinterest.com/extechnologyin/"
+                    title="pinterest"
+                  >
+                    <FaPinterest size={20} />
+                  </a>
                 </span>
                 <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
-                  <FaYoutube size={20} />
+                  <a
+                    title="linkedin"
+                    href="https://www.linkedin.com/company/ex-technology"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                </span>
+                <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
+                  <a
+                    title="instagram"
+                    href="https://www.instagram.com/extechnology.in/"
+                  >
+                    <FaInstagram size={20} />
+                  </a>
+                </span>
+                <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
+                  <a title="twitter" href="https://x.com/extechnologyin">
+                    <FaXTwitter size={20} />
+                  </a>
+                </span>
+                <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
+                  <a
+                    title="youtuve"
+                    href="https://www.youtube.com/@extechnologyin"
+                  >
+                    <FaYoutube size={20} />
+                  </a>
                 </span>
               </div>
               <ul className="text-sm text-gray-300 space-y-2 leading-relaxed">
                 <li>Indo arcade</li>
                 <li>room no:412</li>
                 <li>Cherootty road calicut</li>
-                <li>9526123466</li>
+                <li className="flex gap-1 content-center">
+                  {" "}
+                  <FaPhone className="relative top-1" /> 9526123466
+                </li>
               </ul>
             </div>
 

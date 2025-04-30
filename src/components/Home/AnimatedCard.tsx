@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cards = [
   {
@@ -71,7 +72,7 @@ const AnimatedCard = () => {
             <button
               onClick={handlePrev}
               title="Previous"
-              className="border border-purple-500 rounded py-3 px-8"
+              className="border border-purple-500 hover:bg-gradient-to-r from-violet-500 to-sky-500 rounded py-3 px-10 transition-all ease-in-out duration-500"
               data-aos="zoom-out-up"
               data-aos-duration="1000"
             >
@@ -81,7 +82,7 @@ const AnimatedCard = () => {
             <button
               onClick={handleNext}
               title="Next"
-              className="border border-purple-500 rounded py-3 px-8"
+              className="border border-purple-500 hover:bg-gradient-to-r from-violet-500 to-sky-500 rounded py-3 px-10 transition-all ease-in-out duration-500"
               data-aos="zoom-out-up"
               data-aos-duration="1000"
             >
@@ -127,9 +128,11 @@ const AnimatedCard = () => {
                       alt="icon"
                       className="w-full max-w-[280px] mx-auto object-contain my-4"
                     />
-                    <button className="border border-white rounded-full px-6 py-2 mt-2 text-sm md:text-base">
-                      Learn More →
-                    </button>
+                    <Link to={"/service"}>
+                      <button className="border hover:scale-105 transition-all duration-300 ease-in-out border-white rounded-full px-6 py-2 mt-2 text-sm md:text-base">
+                        Learn More →
+                      </button>
+                    </Link>
                   </div>
                 </motion.div>
               </motion.div>
@@ -175,9 +178,11 @@ const AnimatedCard = () => {
                                 {item.desc}
                               </p>
                             </div>
-                            <button className="border border-white rounded px-4 py-2 w-fit">
-                              Learn More →
-                            </button>
+                            <Link to={"/service"}>
+                              <button className="border hover:scale-105 transition-all duration-300 ease-in-out border-white rounded px-4 py-2 w-fit">
+                                Learn More →
+                              </button>
+                            </Link>
                           </div>
                           <div className="w-1/2 flex justify-center items-center">
                             <img
@@ -197,9 +202,11 @@ const AnimatedCard = () => {
                             alt="icon"
                             className="w-[80%] mx-auto object-contain"
                           />
-                          <button className="border mt-5 border-white rounded px-4 py-2 w-fit">
-                            Learn More →
-                          </button>
+                          <Link to={"/service"}>
+                            <button className="border mt-5 hover:scale-105 transition-all duration-300 ease-in-out border-white rounded px-4 py-2 w-fit">
+                              Learn More →
+                            </button>
+                          </Link>
                         </>
                       )}
                     </div>
