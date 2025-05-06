@@ -74,7 +74,7 @@ const AnimatedCard = () => {
           >
             We Provide
           </h1>
-          <div className="hidden md:flex justify-end gap-4 pr-16">
+          <div className="hidden md:flex justify-end gap-4 pr-16 ">
             <button
               onClick={handlePrev}
               title="Previous"

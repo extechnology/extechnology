@@ -111,7 +111,7 @@ const Navbar = () => {
               <Link to={"/"} className="group">
                 <div className="flex items-center justify-center">
                   <img
-                    src="/Vector (2).svg"
+                    src="/Group 115686.svg"
                     alt="Exbot Logo"
                     loading="lazy"
                     className="pl-4 md:pl-0 h-8 md:mb-1 object-contain transition-transform duration-500 hover:scale-x-[-1]"
