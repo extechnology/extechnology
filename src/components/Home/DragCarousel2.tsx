@@ -8,17 +8,20 @@ const CarouselImages = [
   {
     id: 1,
     image: "/Rectangle 34624243.svg",
-    title: `Years of Proven Expertise in IT consulting and distribution`,
+    title: "",
+    para: "Years of Proven Expertise in IT consulting and distribution",
   },
   {
     id: 2,
     image: "/Rectangle 34624243 (1).svg",
-    title: `Years of Proven Expertise in IT consulting and distribution`,
+    title: `Business Solutions that Fit`,
+    para: "Custom Tailored Solutions for Specific Business Needs",
   },
   {
     id: 3,
     image: "/Rectangle 34624243 (2).svg",
-    title: `Years of Proven Expertise in IT consulting and distribution`,
+    title: `Complexity Made Simple`,
+    para: "Deep Technical Competencies To Handle Complex IT Environments",
   },
 ];
 
@@ -145,7 +148,8 @@ const ScrollCarousel = () => {
                     alt=""
                     className="w-full h-auto object-cover mb-4 rounded-lg shadow-xl"
                   />
-                  <p className="text-2xl text-center">{item.title}</p>
+                  <h1 className="text-2xl font-bold mb-2 text-center">{item.title}</h1>
+                  <p className="text-xl text-center">{item.para}</p>
                 </div>
               </div>
             ))}

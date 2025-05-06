@@ -7,25 +7,27 @@ const Hero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
 
+  // Updated scroll configuration to make it complete before next section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
 
-  // Faster animations: adjust in 0 to 0.5 scroll range
-  const fastRange: [number, number] = [0, 0.5];
+  // Adjusted ranges for smoother completion
+  const animationRange: [number, number] = [0, 0.8]; // 80% of scroll completes all animations
 
-  // Text transformations
-  const textScale = useTransform(scrollYProgress, fastRange, [1.1, 1.6]);
-  const textRotate = useTransform(scrollYProgress, fastRange, [0, -15]);
+  // Text transformations - now includes X movement
+  const textScale = useTransform(scrollYProgress, animationRange, [1.1, 1.6]);
+  const textRotate = useTransform(scrollYProgress, animationRange, [0, -15]);
+  const textX = useTransform(scrollYProgress, animationRange, [0, -200]); // Moves left
 
   // Button horizontal movement
-  const leftBtnX = useTransform(scrollYProgress, fastRange, [0, -300]);
-  const rightBtnX = useTransform(scrollYProgress, fastRange, [0, 290]);
+  const leftBtnX = useTransform(scrollYProgress, animationRange, [0, -450]);
+  const rightBtnX = useTransform(scrollYProgress, animationRange, [0, 450]);
 
   // Globe movement and opacity
-  const globeY = useTransform(scrollYProgress, fastRange, [100, -380]);
-  const globeOpacity = useTransform(scrollYProgress, fastRange, [1, 1.5]);
+  const globeY = useTransform(scrollYProgress, animationRange, [100, -380]);
+  const globeOpacity = useTransform(scrollYProgress, animationRange, [1, 1.5]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     setMousePos({ x: e.clientX, y: e.clientY });
@@ -39,6 +41,7 @@ const Hero = () => {
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => setHovering(false)}
         className="relative content-center items-center justify-center border-b border-sky-700 md:min-h-screen h-[100dvh] px-4 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden"
+        style={{ scrollSnapAlign: "start" }} // Ensures complete scroll before next section
       >
         {/* Base background */}
         <div
@@ -68,11 +71,14 @@ const Hero = () => {
           />
         )}
 
-        {/* Main Text */}
-        {/* Rotating Heading Only */}
+        {/* Main Text - Now moves left while rotating */}
         <motion.div
           className="relative z-20 text-center max-w-6xl mx-auto top-11"
-          style={{ scale: textScale, rotate: textRotate }}
+          style={{
+            scale: textScale,
+            rotate: textRotate,
+            x: textX, // Added horizontal movement
+          }}
         >
           <h1 className="text-3xl md:text-6xl font-bold tracking-wider m-0">
             EMPOWER YOUR BUSINESS
@@ -85,7 +91,7 @@ const Hero = () => {
           </h1>
         </motion.div>
 
-        {/* Buttons — moved outside so they don’t rotate */}
+        {/* Buttons */}
         <div className="relative z-20 md:top-32 top-20 space-y-5 md:space-y-0 md:flex justify-center items-center gap-4">
           <motion.div style={{ x: leftBtnX }} className="flex justify-center">
             <div className="p-[1px] rounded-md hover:rounded-full transform transition-all bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500  duration-300 inline-block">
@@ -114,7 +120,7 @@ const Hero = () => {
         <motion.div
           className="absolute z-30 flex justify-center w-full pointer-events-none"
           style={{
-            top: "70%", // start partially visible
+            top: "70%",
             y: globeY,
             opacity: globeOpacity,
           }}
