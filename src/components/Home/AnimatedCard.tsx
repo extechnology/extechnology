@@ -7,27 +7,28 @@ const cards = [
   {
     title: "WEB/E-COMMERCE PLATFORMS",
     desc: "Build robust online stores and websites that drive sales and growth.",
-    image: "/11271176_e_commerce_business_web_store_icon.png",
-    gradient: "from-orange-900 via-orange-600 to-red-700",
+    image: "/11271176_e_commerce_business_web_store_icon (1).png",
+    gradient:
+      "bg-[linear-gradient(to_bottom_right,_#2B130C_0%,_#BC6610B8_50%,_#B90C0C_100%)]",
   },
   {
     title: "MOBILE APPLICATIONS",
     desc: "Develop intuitive and engaging mobile apps that transform user experiences.",
     image:
-      "/11850102_platform_notification_e-commerce and shopping_adobe_podium_icon 1.png",
-    gradient: "from-gray-900 via-gray-800 to-gray-700",
+      "/11850102_platform_notification_e-commerce and shopping_adobe_podium_icon 1 (1).png",
+    gradient: "bg-[linear-gradient(to_bottom_right,_#2B130C_0%,_#BC6610B8_50%,_#B90C0C_100%)]",
   },
   {
     title: "AI INTEGRATED APPLICATIONS",
     desc: "Create automated and interactive chatbots that enhance customer conversations.",
-    image: "/25845660_ecommercev2_5 1.png",
-    gradient: "from-blue-900 via-blue-600 to-purple-700",
+    image: "/25845660_ecommercev2_5 1 (1).png",
+    gradient: "bg-[linear-gradient(to_bottom_right,_#2B130C_0%,_#BC6610B8_50%,_#B90C0C_100%)]",
   },
   {
     title: "CRM APPLICATIONS",
     desc: "Create automated and interactive chatbots that enhance customer conversations.",
-    image: "/crm-removebg-preview 1.png",
-    gradient: "from-blue-900 via-blue-600 to-purple-700",
+    image: "/crm-removebg-preview 1 (1).png",
+    gradient: "bg-[linear-gradient(to_bottom_right,_#2B130C_0%,_#BC6610B8_50%,_#B90C0C_100%)]",
   },
 ];
 
@@ -53,11 +54,11 @@ const AnimatedCard = () => {
   };
 
   return (
-    <div className="bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 md:pb-20">
+    <div className="relative bg-[var(--bg-color)] text-[var(--text-color)] md:pt-56 md:pb-20">
       <img
         src="/Group 115657 (2).png"
         alt=""
-        className="md:flex hidden absolute left-11"
+        className="md:flex hidden absolute left-1/2 transform -translate-x-1/2"
       />
       <div className="transform md:translate-y-40 py-12 md:pt-0 md:pl-12 max-w-7xl mx-auto px-4 md:pb-60">
         <div className="justify-between items-center">
@@ -117,7 +118,7 @@ const AnimatedCard = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
                   transition={{ duration: 0.5 }}
-                  className={`rounded-4xl overflow-hidden bg-gradient-to-r ${cards[activeIndex].gradient} text-white flex flex-col justify-between h-full mx-auto w-[90vw] max-w-md`}
+                  className={`rounded-4xl overflow-hidden ${cards[activeIndex].gradient} text-white flex flex-col justify-between h-full mx-auto w-[90vw] max-w-md`}
                 >
                   <div className="px-6 py-8 h-full flex flex-col justify-center items-center text-center">
                     <h3 className="text-2xl font-bold mb-4 px-2">

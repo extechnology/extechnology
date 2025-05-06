@@ -29,6 +29,15 @@ const lineVariants = {
   },
 };
 
+const lineImages = [
+  "/Vector.svg",
+  "/line-md_security.svg",
+  "/uil_chart-growth.svg",
+  "/streamline_ai-technology-spark.svg",
+  "/grommet-icons_status-good.svg",
+];
+
+
 interface MousePosition {
   x: number;
   y: number;
@@ -90,7 +99,11 @@ const UnlockPotential: React.FC = () => {
       </div>
       <section className="relative z-5 flex items-center justify-center px-4 md:px-16 pt-16 md:pt-56 md:pb-55 pb-20 bg-[var(--bg-color)] text-[var(--text-color)] overflow-hidden">
         {/* Background Layer with Gradient */}
-        <img src="/Group 115657.png" alt="" className="absolute pb-10 hidden md:flex" />
+        <img
+          src="/Group 115657.png"
+          alt=""
+          className="absolute pb-10 hidden md:flex"
+        />
         <div className="absolute  inset-0 z-0 overflow-hidden">
           {/* Main gradient background */}
           <div className="absolute  inset-0 bg-gradient-to-tr from-purple-800 via-black to-black opacity-10" />
@@ -143,7 +156,7 @@ const UnlockPotential: React.FC = () => {
                 data-aos="fade-up"
               >
                 <div className="flex justify-center pb-3">
-                  <img src="/Vector.svg" alt="" />
+                  <img src={lineImages[idx]} alt={`Line Icon ${idx + 1}`} />
                 </div>
                 <motion.p variants={lineVariants} className="text-center">
                   {line}

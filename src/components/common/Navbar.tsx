@@ -15,12 +15,16 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { Button } from "@/ui/Button";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   // const isMobile = useIsMobile();
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -82,6 +86,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    if (location.pathname === href) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate(href);
+    }
+    setIsOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 py-3 ">
       <div
@@ -94,7 +107,36 @@ const Navbar = () => {
         <div className="container mx-auto md:px-4">
           <div className="flex items-center justify-between py-3">
             {/* Company Logo */}
-            <div className="flex items-center justify-center">
+            <div className="md:flex hidden items-center justify-center md:pl-5">
+              <Link to={"/"} className="group">
+                <div className="flex items-center justify-center">
+                  <img
+                    src="/Vector (2).svg"
+                    alt="Exbot Logo"
+                    loading="lazy"
+                    className="pl-4 md:pl-0 h-8 md:mb-1 object-contain transition-transform duration-500 hover:scale-x-[-1]"
+                  />
+                  <img
+                    src="/Group (4).svg"
+                    alt="Exbot Logo"
+                    loading="lazy"
+                    className=" pl-4 md:pl-0 h-8  md:mb-1 object-contain transition-all duration-300  "
+                  />
+                  <img
+                    src="/Group (5).svg"
+                    alt="Exbot Logo"
+                    loading="lazy"
+                    className=" pl-4 md:pl-0 h-8  md:mb-1 object-contain transition-all duration-300  "
+                  />
+                </div>
+                <div className="flex justify-center">
+                  <img src="/Group (6).svg" alt="" className="w-18" />
+                </div>
+              </Link>
+            </div>
+
+            {/* mobile logo */}
+            <div className="flex items-center justify-center md:hidden">
               <Link to={"/"} className="group">
                 <img
                   src="/EX_TECHNOLOGY_LOGO-01.png"
@@ -115,14 +157,14 @@ const Navbar = () => {
             <div className="hidden md:flex items-center flex-1 justify-center">
               <nav className="flex items-center space-x-10">
                 {navItems.map((item) => (
-                  <Link
+                  <button
                     key={item.label}
-                    to={item.href}
-                    className={`transition-colors flex items-center space-x-1 relative group text-primary`}
+                    onClick={() => handleNavClick(item.href)}
+                    className={`transition-colors flex items-center space-x-1 relative group text-primary bg-transparent border-none focus:outline-none`}
                   >
                     <span className="ml-1">{item.label}</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-                  </Link>
+                  </button>
                 ))}
               </nav>
             </div>
@@ -191,9 +233,9 @@ const Navbar = () => {
             >
               <nav className="flex flex-col space-y-8 w-full px-4">
                 {navItems.map((item, index) => (
-                  <Link
-                    key={item.label}
-                    to={item.href}
+                  <button
+                    type="button"
+                    key={item.href}
                     style={{
                       transitionDelay: `${100 + index * 50}ms`,
                     }}
@@ -202,13 +244,13 @@ const Navbar = () => {
                         ? "translate-y-0 opacity-100"
                         : "translate-y-8 opacity-0"
                     }`}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => handleNavClick(item.href)}
                   >
                     <div className="p-2 rounded-full bg-white/5 border border-white/10">
                       {item.icon}
                     </div>
                     <span>{item.label}</span>
-                  </Link>
+                  </button>
                 ))}
                 <div className="flex justify-center text-white">
                   <Link

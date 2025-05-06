@@ -3,6 +3,8 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsChevronRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
+
 
 const links = [
   { label: "Home", path: "/" },
@@ -54,6 +56,8 @@ const Footer = () => {
                   <a
                     title="facebook"
                     href="https://www.facebook.com/extechnology.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaFacebookF size={20} />
                   </a>
@@ -62,6 +66,8 @@ const Footer = () => {
                   <a
                     href="https://in.pinterest.com/extechnologyin/"
                     title="pinterest"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaPinterest size={20} />
                   </a>
@@ -70,6 +76,8 @@ const Footer = () => {
                   <a
                     title="linkedin"
                     href="https://www.linkedin.com/company/ex-technology"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaLinkedin size={20} />
                   </a>
@@ -78,12 +86,19 @@ const Footer = () => {
                   <a
                     title="instagram"
                     href="https://www.instagram.com/extechnology.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaInstagram size={20} />
                   </a>
                 </span>
                 <span className="bg-white/10 text-[#9F37F8] hover:bg-white/20 p-2 rounded-full">
-                  <a title="twitter" href="https://x.com/extechnologyin">
+                  <a
+                    title="twitter"
+                    href="https://x.com/extechnologyin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaXTwitter size={20} />
                   </a>
                 </span>
@@ -91,6 +106,8 @@ const Footer = () => {
                   <a
                     title="youtuve"
                     href="https://www.youtube.com/@extechnologyin"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaYoutube size={20} />
                   </a>
@@ -103,6 +120,10 @@ const Footer = () => {
                 <li className="flex gap-1 content-center">
                   {" "}
                   <FaPhone className="relative top-1" /> 9526123466
+                </li>
+                <li className="flex gap-1 content-center">
+                  {" "}
+                  <IoIosMail className="relative top-1" /> Info@extechnology.in
                 </li>
               </ul>
             </div>

@@ -1,7 +1,14 @@
 const Vision = () => {
   return (
     <div className="bg-[var(--bg-color)] text-[var(--text-color)]">
-      <div className=" md:flex justify-center items-center max-w-7xl mx-auto pt-30 pb-20">
+      <h1
+        className="md:text-6xl md:hidden text-5xl px-5 pt-38 md:pt-0 md:px-0 font-bold pb-5 text-center"
+        data-aos="fade-up"
+        data-aos-duration="900"
+      >
+        Our Mission & Vision
+      </h1>
+      <div className=" md:flex justify-center items-center max-w-7xl mx-auto md:pt-30 pb-20">
         <div className="md:w-1/2">
           <img
             src="/Image And Frame (1).svg"
@@ -13,13 +20,13 @@ const Vision = () => {
         </div>
         <div className=" md:w-1/2">
           <h1
-            className="md:text-6xl text-5xl px-5 pt-5 md:pt-0 md:px-0 font-bold pb-5 text-center"
+            className="md:text-6xl hidden md:block text-5xl px-5 pt-5 md:pt-0 md:px-0 font-bold pb-5 text-center"
             data-aos="fade-up"
             data-aos-duration="900"
           >
             Our Mission & Vision
           </h1>
-          <div className="px-5 md:px-0">
+          <div className="px-5 md:px-0 pt-5 md:pt-0">
             <p
               className="md:text-2xl text-xl pb-4 text-justify"
               data-aos="fade-up"

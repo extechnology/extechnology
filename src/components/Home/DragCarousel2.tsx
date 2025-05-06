@@ -66,7 +66,7 @@ const ScrollCarousel = () => {
           rotation: rotationAngle,
           opacity: 0,
           scale: 0.8,
-          duration: 1,
+          duration: .5,
         },
         `+=0`
       )
@@ -118,7 +118,7 @@ const ScrollCarousel = () => {
           } flex items-center justify-center`}
         >
           <h1
-            className="md:text-5xl text-xl text-slate-400 hover:text-white transition-all ease-in-out duration-500 leading-relaxed px-8"
+            className="md:text-5xl text-xl text-slate-400 hover:text-[var(--text-color)] transition-all ease-in-out duration-500 leading-relaxed px-8"
             data-aos="fade-up"
           >
             Ex-technology delivers tailored digital solutions that enhance user
