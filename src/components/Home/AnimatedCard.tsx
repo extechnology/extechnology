@@ -36,6 +36,11 @@ const AnimatedCard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
+  const activeGradient =
+    "bg-[linear-gradient(to_bottom_right,#2B130C_0%,#BC6610B8_50%,#B90C0C_100%)]";
+  const nextGradient = "bg-[#110A0A]";
+
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
 
@@ -159,7 +164,11 @@ const AnimatedCard = () => {
                       opacity: 0.7,
                     }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className={`rounded-4xl overflow-hidden bg-gradient-to-r ${item.gradient} text-white flex flex-col justify-between min-h-full`}
+                    className={`rounded-4xl overflow-hidden ${
+                      isActive
+                        ? activeGradient
+                        : nextGradient
+                    } text-white flex flex-col justify-between min-h-full`}
                   >
                     <div
                       className={`px-7 py-10 h-full flex ${
