@@ -114,9 +114,11 @@ const Footer = () => {
                 </span>
               </div>
               <ul className="text-sm text-gray-300 space-y-2 leading-relaxed">
-                <li>Indo arcade</li>
-                <li>room no:412</li>
-                <li>Cherootty road calicut</li>
+                <li>Unit No: 9,</li>
+                <li>Ground Floor,</li>
+                <li>KINFRA Advanced Technology Park,</li>
+                <li>Ramanattukara, Kozhikode , Kerala</li>
+                <li>673631</li>
                 <li className="flex gap-1 content-center">
                   {" "}
                   <FaPhone className="relative top-1" /> 9526123466
@@ -159,6 +161,16 @@ const Footer = () => {
                 <button type="submit" title="Subscribe" className="ml-2 p-2">
                   <HiOutlineMail size={24} className="text-purple-500" />
                 </button>
+              </div>
+              <div className="w-full mt-6 overflow-hidden border border-white/10 shadow-lg h-48 md:h-52">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.5825309876645!2d75.8546161!3d11.1809117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba651be1190a97d%3A0xbde6ecee8d0fdb1c!2sKINFRA%20Advanced%20Technology%20Park%2C%20Ramanattukara!5e1!3m2!1sen!2sin!4v1780554260604!5m2!1sen!2sin"
+                  className="w-full h-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                  style={{ border: "0" }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
