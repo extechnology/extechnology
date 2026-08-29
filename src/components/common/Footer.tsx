@@ -111,7 +111,7 @@ const Footer = () => {
                   >
                     <FaYoutube size={20} />
                   </a>
-                </span>
+                </span> 
               </div>
               <ul className="text-sm text-gray-300 space-y-2 leading-relaxed">
                 <li>Unit No: 9,</li>

@@ -112,7 +112,13 @@ export default function Contact() {
           <ul className="flex flex-col gap-2">
             <li className="flex items-start gap-2 text-left ">
               <FaLocationDot className="relative top-1 text-fuchsia-600" />
-              Indo Arcade, <br /> Room No: 412, Cherooti Road, <br /> Calicut
+              <span>
+                Unit No: 9, <br /> 
+                Ground Floor, <br /> 
+                KINFRA Advanced Technology Park, <br /> 
+                Ramanattukara, Kozhikode , Kerala <br />
+                673631
+              </span>
             </li>
             <li className="flex items-start gap-2 text-left">
               <FiPhoneCall className="relative top-1 text-fuchsia-600" />
